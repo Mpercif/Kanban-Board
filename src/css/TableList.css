@@ -1,0 +1,91 @@
+.container{
+    width: 90%;
+    margin: 0 auto;
+    min-height: 510px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-auto-rows: 400px;
+    place-content: center;
+    gap: 30px;
+}
+
+
+.taskList{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 0;
+    background-color: white;
+    overflow-y: hidden;
+    box-shadow: 0 0 2px rgba(0, 0, 00, 0.2);
+}
+
+.taskList__title{
+    width: 100%;
+    text-align: center;
+}
+
+.taskContainer{
+    width: 90%;
+    height: 100%;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    overflow-y: scroll;
+}
+
+.taskContainer::-webkit-scrollbar{
+    width: 2px;
+}
+
+.taskContainer__item{
+    list-style: none;
+    padding: 15px 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: space-between;
+    transform: translateX(0%);
+    transition: transform 0.2s ease;
+    overflow: hidden;
+}
+
+.arrow{
+    font-size: 1.3rem;
+    border: none;
+    background: none;
+    outline: none;
+}
+
+.arrows .arrows--active{    
+    color: #21a08f;
+    cursor: pointer;
+}
+
+.arrows .arrows--disabled{    
+    color: #bccac9;
+}
+
+@media screen and (max-width: 768px) {
+    .container{
+        width: 90%;
+        margin: 20px auto;
+        gap: 20px;
+    }
+}
+
+@media screen and (max-width: 465px) {
+    .header{
+        z-index: 1;
+        position: fixed;
+        top: 0;
+      }
+
+    .container{
+        margin: 120px auto;
+    }
+      
+}
